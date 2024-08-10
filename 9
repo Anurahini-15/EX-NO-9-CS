@@ -1,0 +1,13 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+data = np.loadtxt('your_data.txt')
+df = pd.DataFrame(data)
+corr_matrix = df.corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', square=True)
+plt.title("H-Plot of Correlation Matrix")
+plt.xlabel("Features")
+plt.ylabel("Features")
+plt.show()
